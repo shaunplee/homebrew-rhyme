@@ -10,13 +10,14 @@ class Rhyme < Formula
 
   def install
     system "tar", "xf", "rhyme-0.9.tar"
-    Dir.chdir("rhyme-0.9")
+    Dir.chdir("rhyme-0.9") do
       system "make", "-i", "BINPATH=/usr/local/bin", "RHYMEPATH=/usr/local/share/rhyme", "MANPATH=/usr/local/share/man/man1"
       bin.install "rhyme"
       pkgshare.install "words.db"
       pkgshare.install "rhymes.db"
       pkgshare.install "multiple.db"
       man1.install "rhyme.1"
+    end
   end
 
   test do
