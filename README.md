@@ -6,7 +6,7 @@ This is a Homebrew formula for `rhyme`, a command-line program that takes a word
 
 See http://rhyme.sourceforge.net for more information.
 
-To install with Homebrew, please:
+To install with Homebrew run:
 
 `$ brew tap shaunplee/rhyme`
 
