@@ -9,9 +9,10 @@ class Rhyme < Formula
   depends_on "readline"
 
   def install
+    ENV.deparallelize
     system "tar", "xf", "rhyme-0.9.tar"
     Dir.chdir("rhyme-0.9") do
-      system "make", "-i", "BINPATH=#{HOMEBREW_PREFIX}/bin", "RHYMEPATH=#{HOMEBREW_PREFIX}/share/rhyme", "MANPATH=#{HOMEBREW_PREFIX}/share/man/man1"
+      system "make", "-i", "BINPATH=#{HOMEBREW_PREFIX}/bin", "RHYMEPATH=#{HOMEBREW_PREFIX}/share/rhyme", "MANPATH=#{HOMEBREW_PREFIX}/share/man/man1", "INCLUDES=-I/usr/local/opt/readline/include/readline"
       bin.install "rhyme"
       pkgshare.install "words.db"
       pkgshare.install "rhymes.db"
