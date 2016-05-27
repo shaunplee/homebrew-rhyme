@@ -16,7 +16,7 @@ and then run:
 
 To use:
 
-```shell
+```
 $  rhyme orange
 Finding perfect rhymes for orange...
 2: orange
@@ -24,7 +24,7 @@ Finding perfect rhymes for orange...
 
 Okay, that was a bad example.
 
-```shell
+```
 $  rhyme banana
 Finding perfect rhymes for banana...
 2: ana(2), anna, branna, cana, chana, danna, flanna, frana, ghana, grana, hana
