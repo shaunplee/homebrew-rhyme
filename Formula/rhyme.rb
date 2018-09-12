@@ -10,15 +10,13 @@ class Rhyme < Formula
 
   def install
     ENV.deparallelize
-    system "tar", "xf", "rhyme-0.9.tar"
-    Dir.chdir("rhyme-0.9") do
-      system "make", "BINPATH=#{HOMEBREW_PREFIX}/bin", "RHYMEPATH=#{HOMEBREW_PREFIX}/share/rhyme", "MANPATH=#{HOMEBREW_PREFIX}/share/man/man1", "INCLUDES=-I#{HOMEBREW_PREFIX}/opt/readline/include/readline"
-      bin.install "rhyme"
-      pkgshare.install "words.db"
-      pkgshare.install "rhymes.db"
-      pkgshare.install "multiple.db"
-      man1.install "rhyme.1"
-    end
+
+    system "make", "BINPATH=#{HOMEBREW_PREFIX}/bin", "RHYMEPATH=#{HOMEBREW_PREFIX}/share/rhyme", "MANPATH=#{HOMEBREW_PREFIX}/share/man/man1", "INCLUDES=-I#{HOMEBREW_PREFIX}/opt/readline/include/readline"
+    bin.install "rhyme"
+    pkgshare.install "words.db"
+    pkgshare.install "rhymes.db"
+    pkgshare.install "multiple.db"
+    man1.install "rhyme.1"
   end
 
   test do
